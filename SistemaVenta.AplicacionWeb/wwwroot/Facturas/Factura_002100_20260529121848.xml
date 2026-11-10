@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd" Version="4.0" Folio="1069" Fecha="2026-05-29T12:17:56" FormaPago="01" SubTotal="42796.00" Total="49643.36" MetodoPago="PUE" Moneda="MXN" TipoCambio="1" TipoDeComprobante="I" LugarExpedicion="42501" Exportacion="01" NoCertificado="30001000000500003416" Certificado="MIIFsDCCA5igAwIBAgIUMzAwMDEwMDAwMDA1MDAwMDM0MTYwDQYJKoZIhvcNAQELBQAwggErMQ8wDQYDVQQDDAZBQyBVQVQxLjAsBgNVBAoMJVNFUlZJQ0lPIERFIEFETUlOSVNUUkFDSU9OIFRSSUJVVEFSSUExGjAYBgNVBAsMEVNBVC1JRVMgQXV0aG9yaXR5MSgwJgYJKoZIhvcNAQkBFhlvc2Nhci5tYXJ0aW5lekBzYXQuZ29iLm14MR0wGwYDVQQJDBQzcmEgY2VycmFkYSBkZSBjYWxpejEOMAwGA1UEEQwFMDYzNzAxCzAJBgNVBAYTAk1YMRkwFwYDVQQIDBBDSVVEQUQgREUgTUVYSUNPMREwDwYDVQQHDAhDT1lPQUNBTjERMA8GA1UELRMIMi41LjQuNDUxJTAjBgkqhkiG9w0BCQITFnJlc3BvbnNhYmxlOiBBQ0RNQS1TQVQwHhcNMjMwNTE4MTE0MzUxWhcNMjcwNTE4MTE0MzUxWjCB1zEnMCUGA1UEAxMeRVNDVUVMQSBLRU1QRVIgVVJHQVRFIFNBIERFIENWMScwJQYDVQQpEx5FU0NVRUxBIEtFTVBFUiBVUkdBVEUgU0EgREUgQ1YxJzAlBgNVBAoTHkVTQ1VFTEEgS0VNUEVSIFVSR0FURSBTQSBERSBDVjElMCMGA1UELRMcRUtVOTAwMzE3M0M5IC8gVkFEQTgwMDkyN0RKMzEeMBwGA1UEBRMVIC8gVkFEQTgwMDkyN0hTUlNSTDA1MRMwEQYDVQQLEwpTdWN1cnNhbCAxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtmecO6n2GS0zL025gbHGQVxznPDICoXzR2uUngz4DqxVUC/w9cE6FxSiXm2ap8Gcjg7wmcZfm85EBaxCx/0J2u5CqnhzIoGCdhBPuhWQnIh5TLgj/X6uNquwZkKChbNe9aeFirU/JbyN7Egia9oKH9KZUsodiM/pWAH00PCtoKJ9OBcSHMq8Rqa3KKoBcfkg1ZrgueffwRLws9yOcRWLb02sDOPzGIm/jEFicVYt2Hw1qdRE5xmTZ7AGG0UHs+unkGjpCVeJ+BEBn0JPLWVvDKHZAQMj6s5Bku35+d/MyATkpOPsGT/VTnsouxekDfikJD1f7A1ZpJbqDpkJnss3vQIDAQABox0wGzAMBgNVHRMBAf8EAjAAMAsGA1UdDwQEAwIGwDANBgkqhkiG9w0BAQsFAAOCAgEAFaUgj5PqgvJigNMgtrdXZnbPfVBbukAbW4OGnUhNrA7SRAAfv2BSGk16PI0nBOr7qF2mItmBnjgEwk+DTv8Zr7w5qp7vleC6dIsZFNJoa6ZndrE/f7KO1CYruLXr5gwEkIyGfJ9NwyIagvHHMszzyHiSZIA850fWtbqtythpAliJ2jF35M5pNS+YTkRB+T6L/c6m00ymN3q9lT1rB03YywxrLreRSFZOSrbwWfg34EJbHfbFXpCSVYdJRfiVdvHnewN0r5fUlPtR9stQHyuqewzdkyb5jTTw02D2cUfL57vlPStBj7SEi3uOWvLrsiDnnCIxRMYJ2UA2ktDKHk+zWnsDmaeleSzonv2CHW42yXYPCvWi88oE1DJNYLNkIjua7MxAnkNZbScNw01A6zbLsZ3y8G6eEYnxSTRfwjd8EP4kdiHNJftm7Z4iRU7HOVh79/lRWB+gd171s3d/mI9kte3MRy6V8MMEMCAnMboGpaooYwgAmwclI2XZCczNWXfhaWe0ZS5PmytD/GDpXzkX0oEgY9K/uYo5V77NdZbGAjmyi8cE2B2ogvyaN2XfIInrZPgEffJ4AB7kFA2mwesdLOCh0BLD9itmCve3A1FGR4+stO2ANUoiI3w3Tv2yQSg4bjeDlJ08lXaaFCLW2peEXMXjQUk7fmpb5MNuOUTW6BE=" Sello="qpgB9rlWyL6eM8n2KfBKbHP+9sVXAaAi9pUDzSdiw1HsLrK2KsxkivuGohM2yjaL2/nlAO2+dw2+SiDmQ8UrmNkykY5hCi/dBY8Zte76vPCjt5e25sETxMF2p5EIT/RQaV1qqx+PWJ6vlvCDXc4CsdhBVimGabWNZ0lfECt8DWSj0eN2se45ZGOURsQUNaqxH3cmX5aB/dqD2kpthk9ZwZyhwK3Z9Omt8T04Y+E+YK/zeCOTQwxd4sCVxCT5xAsZEad1l91wNI/D3rAoefcvKh482KgV3NVs+UCUQCl6BTZA9iR15hBI8jPScgGqlC8E/GlLJZM0sg0P8Ut4U+oFGA==">
+  <cfdi:Emisor Nombre="SERVICIOS DE SALUD DE NUEVO LEON" Rfc="SSN970115QI9" RegimenFiscal="601" />
+  <cfdi:Receptor Nombre="XOCHILT CASAS CHAVEZ" Rfc="CACX7605101P8" UsoCFDI="S01" DomicilioFiscalReceptor="36257" RegimenFiscalReceptor="605" />
+  <cfdi:Conceptos>
+    <cfdi:Concepto ClaveProdServ="43211706" Cantidad="1.00" ClaveUnidad="H87" Unidad="PZA" NoIdentificacion="8" Descripcion="Teclado Semi Mecanico Gamer Shiva K12" ValorUnitario="699.00" Importe="699.00" ObjetoImp="02">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="111.84" Base="699.00" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto ClaveProdServ="46171612" Cantidad="1.00" ClaveUnidad="H87" Unidad="PZA" NoIdentificacion="11" Descripcion="Monitor Gamer G27 165HZ" ValorUnitario="4099.00" Importe="4099.00" ObjetoImp="02">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="655.84" Base="4099.00" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto ClaveProdServ="43211503" Cantidad="2.00" ClaveUnidad="H87" Unidad="PZA" NoIdentificacion="6" Descripcion="Laptop ROG Zephyrus Ryzen 9, Ram 16 gb" ValorUnitario="18999.00" Importe="37998.00" ObjetoImp="02">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="6079.68" Base="37998.00" />
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+  </cfdi:Conceptos>
+  <cfdi:Impuestos TotalImpuestosTrasladados="6847.36">
+    <cfdi:Traslados>
+      <cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="6847.36" Base="42796.00" />
+    </cfdi:Traslados>
+  </cfdi:Impuestos>
+  <cfdi:Complemento>
+    <tfd:TimbreFiscalDigital xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd" Version="1.1" UUID="B70EA27E-7E57-11F1-8803-75FB15740C19" FechaTimbrado="2026-05-29T12:18:48" SelloCFD="qpgB9rlWyL6eM8n2KfBKbHP+9sVXAaAi9pUDzSdiw1HsLrK2KsxkivuGohM2yjaL2/nlAO2+dw2+SiDmQ8UrmNkykY5hCi/dBY8Zte76vPCjt5e25sETxMF2p5EIT/RQaV1qqx+PWJ6vlvCDXc4CsdhBVimGabWNZ0lfECt8DWSj0eN2se45ZGOURsQUNaqxH3cmX5aB/dqD2kpthk9ZwZyhwK3Z9Omt8T04Y+E+YK/zeCOTQwxd4sCVxCT5xAsZEad1l91wNI/D3rAoefcvKh482KgV3NVs+UCUQCl6BTZA9iR15hBI8jPScgGqlC8E/GlLJZM0sg0P8Ut4U+oFGA==" NoCertificadoSAT="30001000000500003456" SelloSAT="B8/erNkry/i4VWmwfRqyGcYm+3xzITEWFfqSsTFsoAmB8tJsGob4TxB10Oz0KBlAgWCcRYRU4VzASVpXT90MRJfrcalGy6ChRTsfVMiKFanOgJrRqH7TTOjkTqdwWXKVELmDXuRFzSXRJqqKbgtTfpiqlWGcroqbKAHUsz9qLl5M26fVAPV/YmWb7FagcgcP8z3V4/xU4h2n1BgNtKVWg+vRygD2vJMRv4zE1l5czZrx3QFD9VvFjZJ9Z4xYgx7117pRXt8nbikjcU+JIEbXVBm/DPCvzY1EEIBb7Jv7cVQvmr7UN/kDSoETGkPxdIlwHIC15yK/9WvWX0ECwRMWmg==" RfcProvCertif="EME000602QR9" />
+  </cfdi:Complemento>
+</cfdi:Comprobante>

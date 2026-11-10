@@ -1,0 +1,159 @@
+﻿@{
+    ViewData["Title"] = "Cliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Estilos {
+    <link rel="stylesheet" href="~/vendor/datatables/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/vendor/datatables/extensiones/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="~/vendor/datatables/extensiones/css/buttons.dataTables.min.css">
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3 bg-second-primary">
+        <h6 class="m-0 font-weight-bold text-white">Lista de Clientes</h6>
+    </div>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-3">
+                <button class="btn btn-success" id="btnNuevo">
+                    <i class="fas fa-user-plus"></i> Nuevo Cliente
+                </button>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-bordered" id="tbdata" cellspacing="0" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>RFC</th>
+                            <th>Dirección Fiscal</th>
+                            <th>Código Postal</th>
+                            <th>País</th>
+                            <th>Estado</th>
+                            <th>Municipio</th>
+                            <th>Régimen</th>
+                            <th>Estatus</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @* DataTables llena esto por AJAX *@
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalData" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6>Detalle Cliente</h6>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form>
+                    <input type="hidden" value="0" id="txtId" />
+
+                    <div class="form-row">
+                        <div class="form-group col-sm-6">
+                            <label for="txtNombre">Nombre</label>
+                            <input type="text" class="form-control form-control-sm input-validar" id="txtNombre" name="Nombre" />
+                        </div>
+
+                        <div class="form-group col-sm-6">
+                            <label for="txtCorreo">Correo</label>
+                            <input type="email" class="form-control form-control-sm input-validar" id="txtCorreo" name="Correo" />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-sm-6">
+                            <label for="txtRFC">RFC</label>
+                            <input type="text" class="form-control form-control-sm input-validar" id="txtRFC" name="RFC" maxlength="13" />
+                        </div>
+
+                        <div class="form-group col-sm-6">
+                            <label for="txtDireccionFiscal">Dirección Fiscal</label>
+                            <input type="text" class="form-control form-control-sm" id="txtDireccionFiscal" name="DireccionFiscal" maxlength="80" />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-sm-4">
+                            <label for="txtCodigoPostal">Código Postal</label>
+                            <input type="text" class="form-control form-control-sm input-validar" id="txtCodigoPostal" name="CodigoPostal" maxlength="5" />
+                        </div>
+
+                        <div class="form-group col-sm-4">
+                            <label for="cboPais">País</label>
+                            <select class="form-control form-control-sm input-validar" id="cboPais" name="Pais">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-sm-4">
+                            <label for="cboEstadoSat">Estado</label>
+                            <select class="form-control form-control-sm input-validar" id="cboEstadoSat" name="Estado">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-sm-4">
+                            <label for="cboMunicipio">Municipio</label>
+                            <select class="form-control form-control-sm input-validar" id="cboMunicipio" name="Municipio">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-sm-4">
+                            <label for="cboRegimenFiscal">Régimen Fiscal</label>
+                            <select class="form-control form-control-sm input-validar" id="cboRegimenFiscal" name="RegimenFiscal">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-sm-4">
+                            <label for="clienteEstado">Estatus</label>
+                            <select class="form-control form-control-sm" id="clienteEstado">
+                                <option value="1">Activo</option>
+                                <option value="0">No Activo</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-primary btn-sm" type="button" id="btnGuardar">Guardar</button>
+                <button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="~/vendor/datatables/extensiones/js/dataTables.responsive.min.js"></script>
+    <script src="~/vendor/datatables/extensiones/js/dataTables.buttons.min.js"></script>
+    <script src="~/vendor/datatables/extensiones/js/jszip.min.js"></script>
+    <script src="~/vendor/datatables/extensiones/js/buttons.html5.min.js"></script>
+    <script src="~/vendor/datatables/extensiones/js/buttons.print.min.js"></script>
+
+    <script src="~/js/vistas/Cliente_Index.js"></script>
+}

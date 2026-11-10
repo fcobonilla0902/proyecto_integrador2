@@ -1,0 +1,277 @@
+﻿@{
+    ViewData["Title"] = "Productos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Estilos {
+    <!-- ============================================================
+    =ESTILOS PARA ESTA PAGINA
+    ===============================================================-->
+    <link rel="stylesheet" href="~/vendor/datatables/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/vendor/datatables/extensiones/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="~/vendor/datatables/extensiones/css/buttons.dataTables.min.css">
+}
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3 bg-second-primary">
+        <h6 class="m-0 font-weight-bold text-white">Lista de Productos</h6>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-3">
+                <button class="btn btn-success" id="btnNuevo"><i class="fas fa-plus-circle"></i> Nuevo Producto</button>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-bordered" id="tbdata" cellspacing="0" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Imagen</th>
+                            <th>Codigo Barra</th>
+                            <th>Marca</th>
+                            <th>Descripcion</th>
+                            <th>Categoria</th>
+                            <th>Stock</th>
+                            <th>Precio</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL DE PRODUCTO -->
+<div class="modal fade" id="modalData" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="m-0 font-weight-bold text-dark">Detalle Producto</h6>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+
+
+            <div class="modal-body">
+                <form>
+                    <input type="hidden" value="0" id="txtId">
+
+                    <div class="row">
+                        <!-- COLUMNA IZQUIERDA -->
+                        <div class="col-md-8">
+
+                            <!-- FILA 1 -->
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="txtCodigoBarra">Código Barra</label>
+                                    <input type="text" class="form-control form-control-sm input-validar" id="txtCodigoBarra">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="cboMarca">Marca</label>
+                                    <select class="form-control form-control-sm" id="cboMarca">
+                                        <option value="0">Seleccionar</option>
+                                        <option value="1">HALion</option>
+                                        <option value="2">INTEL</option>
+                                        <option value="3">ASUS</option>
+                                        <option value="4">HUAWEI</option>
+                                        <option value="5">REDRAGON</option>
+                                        <option value="6">CYBERTEL</option>
+                                        <option value="7">SAMSUNG</option>
+                                        <option value="8">GIGABYTE</option>
+                                        <option value="9">HYPERX</option>
+                                        <option value="10">TRUST</option>
+                                        <option value="11">DELL</option>
+                                        <option value="12">MICROSOFT</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="cboModelo">Modelo</label>
+                                    <select class="form-control form-control-sm" id="cboModelo">
+                                        <option value="0">Seleccionar</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- FILA 2 -->
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="cboMedidaEmpresa">Medida de Empresa</label>
+                                    <select class="form-control form-control-sm" id="cboMedidaEmpresa">
+                                        <option value="0">Seleccionar</option>
+                                        <option value="PZA">Pieza</option>
+                                        <option value="XBX">Caja</option>
+                                        <option value="BG">Bolsa</option>
+                                        <option value="RO">Rollo</option>
+                                        <option value="LTR">Litro</option>
+                                        <option value="MTR">Metro</option>
+                                        <option value="KGM">Kilogramo</option>
+                                        <option value="GRM">Gramo</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label for="cboMedidaSat">Medida del SAT</label>
+                                    <select class="form-control form-control-sm" id="cboMedidaSat">
+                                        <option value="0">Seleccionar</option>
+                                        <option value="1070">H87 - Pieza</option>
+                                        <option value="1320">KGM - Kilogramo</option>
+                                        <option value="1473">LTR - Litro</option>
+                                        <option value="1608">MTR - Metro</option>
+                                        <option value="977">GRM - Gramo</option>
+                                        <option value="2085">BG - Bolsa</option>
+                                        <option value="2102">XBX - Caja</option>
+                                        <option value="2278">XRO - Rollo</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label for="cboMoneda">Moneda</label>
+                                    <select class="form-control form-control-sm" id="cboMoneda">
+                                        <option value="0">Seleccionar</option>
+                                        <option value="1">MXN</option>
+                                        <option value="2">USD</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- FILA 3 -->
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="txtDescripcion">Descripción</label>
+                                    <input type="text" class="form-control form-control-sm input-validar" id="txtDescripcion">
+                                </div>
+                            </div>
+
+                            <!-- FILA 4 -->
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="cboCategoria">Categoría</label>
+                                    <select class="form-control form-control-sm" id="cboCategoria"></select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="txtStock">Stock</label>
+                                    <input type="number" class="form-control form-control-sm input-validar" id="txtStock" min="0">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="cboClaveProductoSat">Clave Producto SAT</label>
+                                    <select class="form-control form-control-sm" id="cboClaveProductoSat">
+                                        <option value="0">Seleccionar</option>
+                                        <option value="01010101">01010101 - No existe en el catálogo</option>
+                                        <option value="43211503">43211503 - Computadora portátil</option>
+                                        <option value="43211507">43211507 - Computadora de escritorio</option>
+                                        <option value="43201803">43201803 - Disco duro</option>
+                                        <option value="32101601">32101601 - Memoria RAM</option>
+                                        <option value="43211900">43211900 - Monitor</option>
+                                        <option value="43222609">43222609 - Micrófono</option>
+                                        <option value="43191501">43191501 - Teclado</option>
+                                        <option value="43211708">43211708 - Mouse</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- FILA 5 -->
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="txtPrecio">Precio Unitario</label>
+                                    <input type="number" class="form-control form-control-sm input-validar" id="txtPrecio" step="0.01" min="0">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="cboEstado">Estado</label>
+                                    <select class="form-control form-control-sm" id="cboEstado">
+                                        <option value="1">Activo</option>
+                                        <option value="0">No Activo</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="cboObjetoImpuesto">Objeto del Impuesto</label>
+                                    <select class="form-control form-control-sm" id="cboObjetoImpuesto">
+                                        <option value="0">Seleccionar</option>
+                                        <option value="01">01 - No objeto de impuesto</option>
+                                        <option value="02">02 - Sí objeto de impuesto</option>
+                                        <option value="03">03 - No obligado al desglose</option>
+                                        <option value="04">04 - No causa impuesto</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- FILA 6 -->
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="decDescuento">Descuento %</label>
+                                    <input type="number" class="form-control form-control-sm input-validar" id="decDescuento" min="0" max="100" step="0.01">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="cboImpuesto">Impuesto</label>
+                                    <select class="form-control form-control-sm" id="cboImpuesto">
+                                        <option value="0">Seleccionar</option>
+                                        <option value="001">001 - ISR</option>
+                                        <option value="002">002 - IVA</option>
+                                        <option value="003">003 - IEPS</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- FILA 7 -->
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="cboFactorImpuesto">Factor del Impuesto</label>
+                                    <select class="form-control form-control-sm" id="cboFactorImpuesto">
+                                        <option value="0">Seleccionar</option>
+                                        <option value="Tasa">Tasa</option>
+                                        <option value="Cuota">Cuota</option>
+                                        <option value="Exento">Exento</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="decValorImpuesto">Valor Impuesto</label>
+                                    <input type="number" class="form-control form-control-sm input-validar" id="decValorImpuesto" step="0.0001" min="0">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- COLUMNA DERECHA -->
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="txtImagen">Imagen del Producto</label>
+                                <input class="form-control-file" type="file" id="txtImagen" />
+                            </div>
+                            <div class="form-group text-center">
+                                <img id="imgProducto" style="max-width:200px;" src="" class="rounded mx-auto d-block border" alt="Foto Producto">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-primary btn-sm" type="button" id="btnGuardar">Guardar</button>
+                <button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <!-- ============================================================
+    =SCRIPTS PARA ESTA PAGINA
+    ===============================================================-->
+    <script src="~/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <script src="~/vendor/datatables/extensiones/js/dataTables.responsive.min.js"></script>
+    <script src="~/vendor/datatables/extensiones/js/dataTables.buttons.min.js"></script>
+    <script src="~/vendor/datatables/extensiones/js/jszip.min.js"></script>
+    <script src="~/vendor/datatables/extensiones/js/buttons.html5.min.js"></script>
+    <script src="~/vendor/datatables/extensiones/js/buttons.print.min.js"></script>
+
+    <script src="~/js/vistas/Producto_Index.js"></script>
+}

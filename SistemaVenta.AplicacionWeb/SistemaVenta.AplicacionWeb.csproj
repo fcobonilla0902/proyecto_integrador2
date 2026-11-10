@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UserSecretsId>SistemaVenta-AplicacionWeb-Development</UserSecretsId>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="15.0.1" />
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
+		<PackageReference Include="DinkToPdf" Version="1.0.8" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\SistemaVenta.BLL\SistemaVenta.BLL.csproj" />
+		<ProjectReference Include="..\SistemaVenta.Entity\SistemaVenta.Entity.csproj" />
+		<ProjectReference Include="..\SistemaVenta.IOC\SistemaVenta.IOC.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Update="Utilidades\LibreriaPDF\libwkhtmltox.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Utilidades\LibreriaPDF\libwkhtmltox.dylib">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Utilidades\LibreriaPDF\libwkhtmltox.so">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="System.ServiceModel.Http" Version="8.*" />
+		<PackageReference Include="System.ServiceModel.NetTcp" Version="8.*" />
+		<PackageReference Include="System.ServiceModel.Primitives" Version="8.*" />
+	</ItemGroup>
+</Project>

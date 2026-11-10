@@ -1,0 +1,115 @@
+﻿@{
+    ViewData["Title"] = "Negocio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3 bg-second-primary">
+        <h6 class="m-0 font-weight-bold text-white">Datos del Negocio</h6>
+    </div>
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <form>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="form-row">
+                                <div class="form-group col-sm-6">
+                                    <label for="txtRfc">RFC</label>
+                                    <input type="text" class="form-control form-control-sm input-validar" id="txtRfc" name="Rfc">
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="txtRazonSocial">Razón Social</label>
+                                    <input type="text" class="form-control form-control-sm input-validar" id="txtRazonSocial" name="Razon Social">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-sm-6">
+                                    <label for="txtCorreo">Correo</label>
+                                    <input type="email" class="form-control form-control-sm input-validar" id="txtCorreo" name="Correo">
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="txtDireccion">Dirección</label>
+                                    <input type="text" class="form-control form-control-sm input-validar" id="txtDireccion" name="Direccion">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-sm-6">
+                                    <label for="txTelefono">Teléfono</label>
+                                    <input type="text" class="form-control form-control-sm input-validar" id="txTelefono" name="Telefono">
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="txtCodigoPostal">Código Postal</label>
+                                    <input type="text" class="form-control form-control-sm input-validar" id="txtCodigoPostal" name="Codigo Postal" maxlength="5">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-sm-4">
+                                    <label for="cbPais">País</label>
+                                    <select class="form-control form-control-sm input-validar" id="cbPais" name="Pais">
+                                        <option value="">Seleccione...</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-sm-4">
+                                    <label for="cbEstado">Estado</label>
+                                    <select class="form-control form-control-sm input-validar" id="cbEstado" name="Estado">
+                                        <option value="">Seleccione...</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-sm-4">
+                                    <label for="cbMunicipio">Municipio</label>
+                                    <select class="form-control form-control-sm input-validar" id="cbMunicipio" name="Municipio">
+                                        <option value="">Seleccione...</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-sm-6">
+                                    <label for="txtSimboloMoneda">Símbolo Moneda</label>
+                                    <input type="text" class="form-control form-control-sm input-validar" id="txtSimboloMoneda" name="SimboloMoneda">
+                                </div>
+
+                                <div class="form-group col-sm-6">
+                                    <label for="cbRegimenFiscal">Régimen Fiscal</label>
+                                    <select class="form-control form-control-sm input-validar" id="cbRegimenFiscal" name="RegimenFiscal">
+                                        <option value="">Seleccione...</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="row">
+                                <div class="form-group col-sm-12">
+                                    <label for="txtLogo">Logo</label>
+                                    <input class="form-control-file" type="file" id="txtLogo" />
+                                </div>
+                                <div class="col-sm-12">
+                                    <img id="imgLogo" style="max-width:200px;" src="" class="rounded" alt="Logo">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <button class="btn btn-success btn-sm" type="button" id="btnGuardarCambios">Guardar Cambios</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/vistas/Negocio_Index.js" asp-append-version="true"></script>
+}

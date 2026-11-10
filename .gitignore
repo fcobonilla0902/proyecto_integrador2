@@ -1,0 +1,7 @@
+**/bin/
+**/obj/
+.vs/
+.verification/
+build-*.log
+verificacion-facturacion.log
+verificacion-api-real.log

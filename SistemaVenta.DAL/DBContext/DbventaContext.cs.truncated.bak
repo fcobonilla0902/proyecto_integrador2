@@ -1,0 +1,114 @@
+﻿                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("nombre");
+
+entity.Property(e => e.DomicilioFiscalReceptor)
+    .HasMaxLength(100)
+    .IsUnicode(false)
+    .HasColumnName("domicilioFiscalReceptor");
+
+entity.Property(e => e.RegimenFiscalReceptor)
+    .HasMaxLength(100)
+    .IsUnicode(false)
+    .HasColumnName("regimenFiscalReceptor");
+        });
+
+modelBuilder.Entity<Venta>(entity =>
+{
+    entity.HasKey(e => e.IdVenta);
+
+    entity.ToTable("Venta");
+
+    entity.Property(e => e.IdVenta).HasColumnName("idVenta");
+
+    entity.Property(e => e.NumeroVenta)
+        .HasMaxLength(6)
+        .IsUnicode(false)
+        .HasColumnName("numeroVenta");
+
+    entity.Property(e => e.IdTipoDocumentoVenta)
+        .HasColumnName("idTipoDocumentoVenta");
+
+    entity.Property(e => e.IdUsuario)
+        .HasColumnName("idUsuario");
+
+    entity.Property(e => e.DocumentoCliente)
+        .HasMaxLength(10)
+        .IsUnicode(false)
+        .HasColumnName("documentoCliente");
+
+    entity.Property(e => e.NombreCliente)
+        .HasMaxLength(20)
+        .IsUnicode(false)
+        .HasColumnName("nombreCliente");
+
+    entity.Property(e => e.SubTotal)
+        .HasColumnType("decimal(10, 2)")
+        .HasColumnName("subTotal");
+
+    entity.Property(e => e.ImpuestoTotal)
+        .HasColumnType("decimal(10, 2)")
+        .HasColumnName("impuestoTotal");
+
+    entity.Property(e => e.Total)
+        .HasColumnType("decimal(10, 2)");
+
+    entity.Property(e => e.FechaRegistro)
+        .HasColumnType("datetime")
+        .HasColumnName("fechaRegistro")
+        .HasDefaultValueSql("(getdate())");
+
+    //  CAMPOS NUEVOS PARA FACTURACIÓN
+    entity.Property(e => e.IdCliente)
+        .HasColumnName("IdCliente");
+
+    entity.Property(e => e.IdFormaPago)
+        .HasColumnName("idFormaPago");
+
+    entity.Property(e => e.IdMetodoPago)
+        .HasColumnName("idMetodoPago");
+
+    entity.Property(e => e.IdUsoCFDI)
+        .HasColumnName("idUsoCFDI");
+
+    entity.Property(e => e.RutaXML)
+        .HasMaxLength(500)
+        .HasColumnName("RutaXML");
+
+    entity.Property(e => e.RutaPDF)
+        .HasMaxLength(500)
+        .HasColumnName("RutaPDF");
+
+    entity.Property(e => e.UUID)
+        .HasMaxLength(100)
+        .HasColumnName("UUID");
+
+    entity.Property(e => e.FechaTimbrado)
+        .HasColumnType("datetime")
+        .HasColumnName("FechaTimbrado");
+
+    //  RELACIONES
+    entity.HasOne(d => d.IdTipoDocumentoVentaNavigation)
+        .WithMany(p => p.Venta)
+        .HasForeignKey(d => d.IdTipoDocumentoVenta)
+        .HasConstraintName("FK__Venta__idTipoDoc__5CA1C101");
+
+    entity.HasOne(d => d.IdUsuarioNavigation)
+        .WithMany(p => p.Venta)
+        .HasForeignKey(d => d.IdUsuario)
+        .HasConstraintName("FK__Venta__idUsuario__5D95E53A");
+
+    //  RELACIÓN CON CLIENTE - CONFIGURACIÓN CORRECTA
+    entity.HasOne(d => d.IdClienteNavigation)
+        .WithMany()
+        .HasForeignKey(d => d.IdCliente)
+        .OnDelete(DeleteBehavior.ClientSetNull)
+        .IsRequired(false); // ← IMPORTANTE: Opcional porque puede ser null
+});
+
+
+OnModelCreatingPartial(modelBuilder);
+    }
+
+    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+}
